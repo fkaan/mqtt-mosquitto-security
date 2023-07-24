@@ -1,6 +1,6 @@
 import paho.mqtt.client as mqtt
 import time
-import config
+
 
 broker = "broker ip/address"
 def on_connect(client, userdata, flags, rc):
