@@ -1,6 +1,7 @@
-# mqtt-mosquitto-security
+# mqtt-mosquitto-security(for windows)
 Step-by-step guide and scripts for setting up TLS/SSL certificates for MQTT Mosquitto broker. Implementing username and password authentication for MQTT clients using Mosquitto.
 # MQTT Mosquitto Secure Setup and Authentication
+(You should write the following codes in windows command line)
 ## TLS/SSL Certificate Setup:
 Generate CA Key and Certificate:
 ```python
