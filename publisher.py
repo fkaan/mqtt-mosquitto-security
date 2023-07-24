@@ -7,7 +7,7 @@ def on_connect(client, userdata, flags, rc):
     print("Connected ", rc)
 
 client = mqtt.Client()
-client.username_pw_set("username", "password")#username and password that you create
+client.username_pw_set("username", "password")#username and password that you've created
 client.tls_set('server_certificate','client_certificate','client_key')#sertificates and keys
 client.tls_insecure_set(True)
 
