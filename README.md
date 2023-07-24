@@ -16,11 +16,11 @@ openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out s
 ```
 Securely Subscribe to a Topic:
 ```python
-mosquitto_sub -h 192.168.68.131 -p 8883 -t test --cafile "C:\Program Files\mosquitto\certs\ca.crt" --tls-version tlsv1.2
+mosquitto_sub -h "your broker ip" -p 8883 -t test --cafile "C:\Program Files\mosquitto\certs\ca.crt" --tls-version tlsv1.2
 ```
 Securely Publish a Message:
 ```python
-mosquitto_pub -h 192.168.68.131 -p 8883 -t test --cafile "C:\Program Files\mosquitto\certs\ca.crt" --tls-version tlsv1.2 -d
+mosquitto_pub -h "your broker ip" -p 8883 -t test --cafile "C:\Program Files\mosquitto\certs\ca.crt" --tls-version tlsv1.2 -d
 ```
 # Client Key Setup:
 ## Generate Client Key and Certificate:
