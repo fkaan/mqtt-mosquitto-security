@@ -22,18 +22,18 @@ Securely Publish a Message:
 ```python
 mosquitto_pub -h 192.168.68.131 -p 8883 -t test --cafile "C:\Program Files\mosquitto\certs\ca.crt" --tls-version tlsv1.2 -d
 ```
-## Client Key Setup:
-# Generate Client Key and Certificate:
+# Client Key Setup:
+## Generate Client Key and Certificate:
 ```python
 openssl genrsa -out client.key 2048
 openssl req -new -out client.csr -key client.key
 openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt -days 360
 ```
-# Securely Publish with Client Credentials:
+## Securely Publish with Client Credentials:
 ```python
 mosquitto_pub --cafile "C:\Program Files\mosquitto\certs\ca.crt" --cert "C:\Program Files\mosquitto\certs\client.crt" --key "C:\Program Files\mosquitto\certs\client.key" -d -h fekef -p 8883 -t test -m "hello world"
 ```
-# Username and Password Authentication:
+##Username and Password Authentication:
 Generate Username and Password:
 First, you must create password folder in C:\Program Files\mosquitto\ then create password.txt.
 ```python
