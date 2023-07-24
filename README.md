@@ -37,7 +37,7 @@ mosquitto_pub --cafile "C:\Program Files\mosquitto\certs\ca.crt" --cert "C:\Prog
 Generate Username and Password:
 First, you must create password folder in C:\Program Files\mosquitto\ then create password.txt.
 ```python
-mosquitto_passwd -c "C:\Program Files\mosquitto\passwords\password.txt" root
+mosquitto_passwd -c "C:\Program Files\mosquitto\passwords\password.txt" root #Root is the name of user you can do what you want
 mosquitto_passwd -D "C:\Program Files\mosquitto\passwords\password.txt" root #To delete a user
 ```
 # Resources
