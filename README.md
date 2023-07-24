@@ -33,7 +33,7 @@ openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out c
 ```python
 mosquitto_pub --cafile "C:\Program Files\mosquitto\certs\ca.crt" --cert "C:\Program Files\mosquitto\certs\client.crt" --key "C:\Program Files\mosquitto\certs\client.key" -d -h fekef -p 8883 -t test -m "hello world"
 ```
-##Username and Password Authentication:
+## Username and Password Authentication:
 Generate Username and Password:
 First, you must create password folder in C:\Program Files\mosquitto\ then create password.txt.
 ```python
