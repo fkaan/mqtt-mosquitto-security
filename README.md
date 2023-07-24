@@ -22,7 +22,7 @@ mosquitto_sub -h 192.168.68.131 -p 8883 -t test --cafile "C:\Program Files\mosqu
 ```python
 mosquitto_pub -h 192.168.68.131 -p 8883 -t test --cafile "C:\Program Files\mosquitto\certs\ca.crt" --tls-version tlsv1.2 -d
 ```
-# Client Key Setup:
+## Client Key Setup:
 # Generate Client Key and Certificate:
 ```python
 openssl genrsa -out client.key 2048
@@ -39,3 +39,5 @@ Generate Username and Password:
 mosquitto_passwd -c "C:\Program Files\mosquitto\passwords\password.txt" root
 mosquitto_passwd -D "C:\Program Files\mosquitto\passwords\password.txt" root #To delete a user
 ```
+
+
