@@ -22,3 +22,20 @@ mosquitto_sub -h 192.168.68.131 -p 8883 -t test --cafile "C:\Program Files\mosqu
 ```python
 mosquitto_pub -h 192.168.68.131 -p 8883 -t test --cafile "C:\Program Files\mosquitto\certs\ca.crt" --tls-version tlsv1.2 -d
 ```
+# Client Key Setup:
+# Generate Client Key and Certificate:
+```python
+openssl genrsa -out client.key 2048
+openssl req -new -out client.csr -key client.key
+openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt -days 360
+```
+# Securely Publish with Client Credentials:
+```python
+mosquitto_pub --cafile "C:\Program Files\mosquitto\certs\ca.crt" --cert "C:\Program Files\mosquitto\certs\client.crt" --key "C:\Program Files\mosquitto\certs\client.key" -d -h fekef -p 8883 -t test -m "hello world"
+```
+# Username and Password Authentication:
+Generate Username and Password:
+```python
+mosquitto_passwd -c "C:\Program Files\mosquitto\passwords\password.txt" root
+mosquitto_passwd -D "C:\Program Files\mosquitto\passwords\password.txt" root #To delete a user
+```
