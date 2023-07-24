@@ -35,9 +35,12 @@ mosquitto_pub --cafile "C:\Program Files\mosquitto\certs\ca.crt" --cert "C:\Prog
 ```
 # Username and Password Authentication:
 Generate Username and Password:
+First, you must create password folder in C:\Program Files\mosquitto\ then create password.txt.
 ```python
 mosquitto_passwd -c "C:\Program Files\mosquitto\passwords\password.txt" root
 mosquitto_passwd -D "C:\Program Files\mosquitto\passwords\password.txt" root #To delete a user
 ```
-
-
+# Resources
+[MQTT](https://mqtt.org)
+[MOSQUITTO](https://mosquitto.org)
+[OPENSSL](https://pypi.org/project/pyOpenSSL/)
