@@ -40,6 +40,23 @@ First, you must create password folder in C:\Program Files\mosquitto\ then creat
 mosquitto_passwd -c "C:\Program Files\mosquitto\passwords\password.txt" root #Root is the name of user you can do what you want
 mosquitto_passwd -D "C:\Program Files\mosquitto\passwords\password.txt" root #To delete a user
 ```
+# Client Key Setup:
+Add following lines to bottom of /mosquitto/mosquitto.conf or create new .conf file.
+
+listener 8883
+per_listener_settings true
+
+password_file  C:\Program Files\mosquitto\passwords\password.txt
+allow_anonymous false 
+protocol mqtt
+
+cafile C:\Program Files\mosquitto\certs\ca.crt
+certfile C:\Program Files\mosquitto\certs\server.crt
+keyfile C:\Program Files\mosquitto\certs\server.key
+
+tls_version tlsv1.2
+#After updating mosquitto.conf, start the mosquitto server
+mosquitto -c mosquitto.conf -v
 # Resources
 [MQTT](https://mqtt.org)
 [MOSQUITTO](https://mosquitto.org)
