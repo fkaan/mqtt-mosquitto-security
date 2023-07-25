@@ -56,7 +56,7 @@ keyfile C:\Program Files\mosquitto\certs\server.key
 
 tls_version tlsv1.2
 ```
-#After updating mosquitto.conf, start the mosquitto server
+## After updating mosquitto.conf, start the mosquitto server
 ```python
 mosquitto -c mosquitto.conf -v
 ```
