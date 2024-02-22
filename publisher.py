@@ -4,7 +4,7 @@ import time
 
 broker = "broker ip/address"
 def on_connect(client, userdata, flags, rc):
-    print("Connected ", rc)
+    print("Connected... ", rc)
 
 client = mqtt.Client()
 client.username_pw_set("username", "password")#username and password that you've created
